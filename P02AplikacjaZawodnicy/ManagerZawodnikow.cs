@@ -2,6 +2,7 @@
 using P02AplikacjaZawodnicy;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
@@ -25,7 +26,15 @@ namespace P01AplikacjaZawodnicy
         private const string naglowek = "id_zawodnika;id_trenera;imie;nazwisko;kraj;data urodzenia;wzrost;waga";
         ZawodnikVM[] zawodnicyKraju;
         SposobPolaczenia sposobPolaczenia;
-         
+
+
+
+        public ManagerZawodnikow()
+        {
+            sposobPolaczenia = SposobPolaczenia.BazaDanych;
+
+            connString= ConfigurationManager.ConnectionStrings["ZawodnicyConnectionString"].ConnectionString;
+        }
 
         /// <summary>
         /// Tworzy nowy menager zawodników zgodnie z wybranym sposoblem połączenia

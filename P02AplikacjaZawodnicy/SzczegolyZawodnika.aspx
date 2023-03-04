@@ -56,9 +56,9 @@
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="./dashboard.html">
+            <a href="Default.aspx">
               <i class="now-ui-icons design_app"></i>
-              <p>Dashboard</p>
+              <p>Startowa</p>
             </a>
           </li>
           <li>
@@ -183,20 +183,20 @@
               <div class="card-body">
                 <form runat="server">
                   <div class="row">
-                    <div class="col-md-5 pr-1">
+                    <div class="col-md-2 pr-1">
                       <div class="form-group">
                         <label>ID</label>
                         <asp:TextBox ID="txtId" CssClass="form-control" ReadOnly="true" runat="server"></asp:TextBox>
                        
                       </div>
                     </div>
-                    <div class="col-md-3 px-1">
+                    <div class="col-md-5 px-1">
                       <div class="form-group">
                         <label>Imie</label>
                          <asp:TextBox ID="txtImie" CssClass="form-control"  runat="server"></asp:TextBox>
                       </div>
                     </div>
-                    <div class="col-md-4 pl-1">
+                    <div class="col-md-5 pl-1">
                       <div class="form-group">
                         <label>Nazwisko</label>
                         <asp:TextBox ID="txtNazwisko" CssClass="form-control"  runat="server"></asp:TextBox>
@@ -218,22 +218,22 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label>Wzrost</label>
                         <asp:TextBox ID="txtWzrost" CssClass="form-control"  runat="server"></asp:TextBox>
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4 pr-1">
+                    <div class="col-md-6 pl-1">
                       <div class="form-group">
                         <label>Waga</label>
                         <asp:TextBox ID="txtWaga" CssClass="form-control"  runat="server"></asp:TextBox>
                       </div>
-                    </div>         
+                    </div> 
                   </div>
-                
+                  
+                    <asp:Button ID="btnZapisz" OnClick="btnZapisz_Click" CssClass="btn btn-primary" runat="server" Text="Zapisz" />
+                     <asp:Button ID="btnUsun" OnClick="btnUsun_Click"    CssClass="btn btn-primary" runat="server" Text="Usuń" />
                 </form>
               </div>
             </div>

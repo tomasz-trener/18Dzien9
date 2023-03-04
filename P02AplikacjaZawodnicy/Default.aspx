@@ -178,7 +178,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Simple Table</h4>
+                <h4 class="card-title"><a href="SzczegolyZawodnika.aspx">Dodaj nowego zawodnika</a> </h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
