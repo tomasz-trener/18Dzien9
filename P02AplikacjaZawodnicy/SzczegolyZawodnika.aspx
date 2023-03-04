@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="P02AplikacjaZawodnicy.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SzczegolyZawodnika.aspx.cs" Inherits="P02AplikacjaZawodnicy.SzczegolyZawodnika" %>
 
  
 <!--
@@ -39,7 +39,7 @@
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body class="">
+<body class="user-profile">
   <div class="wrapper ">
     <div class="sidebar" data-color="orange">
       <!--
@@ -79,13 +79,13 @@
               <p>Notifications</p>
             </a>
           </li>
-          <li>
+          <li class="active ">
             <a href="./user.html">
               <i class="now-ui-icons users_single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
-          <li class="active ">
+          <li>
             <a href="./tables.html">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>Table List</p>
@@ -118,7 +118,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Table List</a>
+            <a class="navbar-brand" href="#pablo">User Profile</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -175,48 +175,104 @@
       </div>
       <div class="content">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-8">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Simple Table</h4>
+                <h5 class="title">Edit Profile</h5>
               </div>
               <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead class=" text-primary">
-                      <th>
-                        Imie i nazwisko
-                      </th>
-                      <th>
-                        Kraj
-                      </th>
-                      <th>
-                        Wzrost
-                      </th>
-                      <th  >
-                        Data urodzenia
-                      </th>
-                    </thead>
-                    <tbody>
-                    
-                    <% foreach (var z in Zawodnicy)
-                        { %>    
-                            <tr>
-                                <td> <a href="SzczegolyZawodnika.aspx?id=<%= z.Id_zawodnika %>"> <%= z.ImieNazwisko %></a></td>
-                                <td><%= z.Kraj %></td>
-                                <td><%= z.Wzrost %></td>
-                                <td><%= z.DataUrodzenia?.ToString("dd.MM.yyyy") %></td>
-                            </tr>
-                        
-                <%      } %>
-
-                    </tbody>
-                  </table>
-                </div>
+                <form runat="server">
+                  <div class="row">
+                    <div class="col-md-5 pr-1">
+                      <div class="form-group">
+                        <label>ID</label>
+                        <asp:TextBox ID="txtId" CssClass="form-control" ReadOnly="true" runat="server"></asp:TextBox>
+                       
+                      </div>
+                    </div>
+                    <div class="col-md-3 px-1">
+                      <div class="form-group">
+                        <label>Imie</label>
+                         <asp:TextBox ID="txtImie" CssClass="form-control"  runat="server"></asp:TextBox>
+                      </div>
+                    </div>
+                    <div class="col-md-4 pl-1">
+                      <div class="form-group">
+                        <label>Nazwisko</label>
+                        <asp:TextBox ID="txtNazwisko" CssClass="form-control"  runat="server"></asp:TextBox>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>Kraj</label>
+                         <asp:TextBox ID="txtKraj" CssClass="form-control"  runat="server"></asp:TextBox>
+                      </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label>Data urodzenia</label>
+                         <asp:TextBox ID="txtDataUr" CssClass="form-control"  runat="server"></asp:TextBox>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Wzrost</label>
+                        <asp:TextBox ID="txtWzrost" CssClass="form-control"  runat="server"></asp:TextBox>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 pr-1">
+                      <div class="form-group">
+                        <label>Waga</label>
+                        <asp:TextBox ID="txtWaga" CssClass="form-control"  runat="server"></asp:TextBox>
+                      </div>
+                    </div>         
+                  </div>
+                
+                </form>
               </div>
             </div>
           </div>
-         
+          <div class="col-md-4">
+            <div class="card card-user">
+              <div class="image">
+                <img src="../assets/img/bg5.jpg" alt="...">
+              </div>
+              <div class="card-body">
+                <div class="author">
+                  <a href="#">
+                    <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
+                    <h5 class="title">Mike Andrew</h5>
+                  </a>
+                  <p class="description">
+                    michael24
+                  </p>
+                </div>
+                <p class="description text-center">
+                  "Lamborghini Mercy <br>
+                  Your chick she so thirsty <br>
+                  I'm in that two seat Lambo"
+                </p>
+              </div>
+              <hr>
+              <div class="button-container">
+                <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+                  <i class="fab fa-facebook-f"></i>
+                </button>
+                <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+                  <i class="fab fa-twitter"></i>
+                </button>
+                <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+                  <i class="fab fa-google-plus-g"></i>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <footer class="footer">

@@ -207,5 +207,10 @@ namespace P01AplikacjaZawodnicy
             db.Zawodnik.InsertOnSubmit(nowy);
             db.SubmitChanges();
         }
+
+        public ZawodnikVM PodajZawodnika(int id)
+        {
+            return TablicaZawodnikow.FirstOrDefault(x => x.Id_zawodnika == id);
+        }
     }
 }

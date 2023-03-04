@@ -90,6 +90,7 @@
     <Content Include="assets\js\plugins\chartjs.min.js" />
     <Content Include="assets\js\plugins\perfect-scrollbar.jquery.min.js" />
     <Content Include="Default.aspx" />
+    <Content Include="SzczegolyZawodnika.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +109,13 @@
       <DependentUpon>ModelBazy.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SzczegolyZawodnika.aspx.cs">
+      <DependentUpon>SzczegolyZawodnika.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SzczegolyZawodnika.aspx.designer.cs">
+      <DependentUpon>SzczegolyZawodnika.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ZawodnikVM.cs" />
   </ItemGroup>
   <ItemGroup>
