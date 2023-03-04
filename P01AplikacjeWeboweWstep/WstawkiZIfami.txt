@@ -1,0 +1,11 @@
+﻿      
+                    if (z.Kraj=="POL")
+                    { %>
+                         <tr style="color:red">
+                <%  }else if (z.Kraj == "USA")
+                    { %>
+                        <tr style="color:blue">
+          <%        }
+                    %>
+
+                niezbyt elegenackie rozwiązanie w którym stosujemy dużo if-ów ze wstawkami 
